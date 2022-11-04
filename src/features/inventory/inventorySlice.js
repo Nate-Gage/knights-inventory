@@ -2,7 +2,11 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchHealth } from "./healthAPI";
 
 const initialState = {
-  weapon: "Spear",
+  weapon: {
+    type: "Spear",
+    rarity: "Uncommon",
+    power: 5,
+  },
   shield: "Large shield",
   armor: "Chainmail",
 };
@@ -38,12 +42,7 @@ export const inventorySlice = createSlice({
   },
 });
 
-export const {
-  editWeapon,
-  editShield,
-  editArmor,
-} = inventorySlice.actions;
-
+export const { editWeapon, editShield, editArmor } = inventorySlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

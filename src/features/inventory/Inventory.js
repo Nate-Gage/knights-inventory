@@ -17,11 +17,26 @@ export const Inventory = () => {
     <div>
       This is the Knight's Inventory! It consists of:
       <ul>
-        <li>{weapon}</li>
+        <li>{weapon.type}</li>
         <li>{shield}</li>
         <li>{armor}</li>
       </ul>
-      <button onClick={() => dispatch(editWeapon("Small stick (whoops!)"))}>
+      <p>Weapon properties:</p>
+      <ul>
+        <li>Power: {weapon.power}</li>
+        <li>Rarity: {weapon.rarity}</li>
+      </ul>
+      <button
+        onClick={() =>
+          dispatch(
+            editWeapon({
+              type: "Small stick (whoops!)",
+              power: 0,
+              rarity: "Common",
+            })
+          )
+        }
+      >
         Click to change the weapon!{" "}
       </button>
     </div>
