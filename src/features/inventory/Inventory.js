@@ -21,7 +21,7 @@ export const Inventory = () => {
         <li>{shield}</li>
         <li>{armor}</li>
       </ul>
-      <button onClick={dispatch(editWeapon("Sword"))}>
+      <button onClick={() => dispatch(editWeapon("Small stick (whoops!)"))}>
         Click to change the weapon!{" "}
       </button>
     </div>

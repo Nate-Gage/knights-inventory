@@ -2,9 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchHealth } from "./healthAPI";
 
 const initialState = {
-  weapon: "spear",
-  shield: "buckler",
-  armor: "chainlink",
+  weapon: "Spear",
+  shield: "Large shield",
+  armor: "Chainmail",
 };
 
 // The function below is called a thunk and allows us to perform async logic. It

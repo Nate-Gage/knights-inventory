@@ -17,6 +17,7 @@ export const HealthCounter = () => {
       <button className={styles.button} onClick={() => dispatch(increment())}>
         +
       </button>
+      {health < 1 && <p>Oh no, you have died!</p>}
     </div>
   );
 };
