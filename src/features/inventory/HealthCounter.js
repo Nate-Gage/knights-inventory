@@ -8,8 +8,8 @@ export const HealthCounter = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <p>Health is currently at:</p>
+    <div className={styles.row}>
+      <h2>Health is currently at:</h2>
       <p>{health}</p>
       <button className={styles.button} onClick={() => dispatch(decrement())}>
         -

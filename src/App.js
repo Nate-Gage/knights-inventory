@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" style={{ height: "200px" }} />
+        <img src={logo} className="App-logo" alt="logo" />
         <Inventory />
         <HealthCounter />
       </header>

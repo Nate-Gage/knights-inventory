@@ -6,6 +6,7 @@ import {
   selectWeapon,
   editWeapon,
 } from "./inventorySlice.js";
+import styles from "./Inventory.module.css";
 
 export const Inventory = () => {
   const dispatch = useDispatch();
@@ -14,31 +15,45 @@ export const Inventory = () => {
   const armor = useSelector(selectArmor);
 
   return (
-    <div>
-      This is the Knight's Inventory! It consists of:
-      <ul>
-        <li>{weapon.type}</li>
-        <li>{shield}</li>
-        <li>{armor}</li>
-      </ul>
-      <p>Weapon properties:</p>
-      <ul>
-        <li>Power: {weapon.power}</li>
-        <li>Rarity: {weapon.rarity}</li>
-      </ul>
-      <button
-        onClick={() =>
-          dispatch(
-            editWeapon({
-              type: "Small stick (whoops!)",
-              power: 0,
-              rarity: "Common",
-            })
-          )
-        }
-      >
-        Click to change the weapon!{" "}
-      </button>
+    <div className={styles.row}>
+      <div className={styles.block}>
+        <h1>This is the Knight's Inventory!</h1>
+        <ul>
+          <li>{weapon.type}</li>
+          <li>{shield}</li>
+          <li>{armor}</li>
+        </ul>
+      </div>
+      <div className={styles.block}>
+        <h4>Weapon properties:</h4>
+        <ul>
+          <li>Power: {weapon.power}</li>
+          <li>Rarity: {weapon.rarity}</li>
+        </ul>
+        <button
+          onClick={() => {
+            if (weapon.type === "Spear") {
+              dispatch(
+                editWeapon({
+                  type: "Small stick (whoops!)",
+                  power: 0,
+                  rarity: "Common",
+                })
+              );
+            } else {
+              dispatch(
+                editWeapon({
+                  type: "Spear",
+                  power: 5,
+                  rarity: "Uncommon",
+                })
+              );
+            }
+          }}
+        >
+          {weapon.type === "Spear" ? `Change Weapon` : `Change Back`}
+        </button>
+      </div>
     </div>
   );
 };
