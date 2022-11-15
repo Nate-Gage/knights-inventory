@@ -15,7 +15,7 @@ export const Inventory = () => {
   const armor = useSelector(selectArmor);
 
   return (
-    <div className={styles.row}>
+    <div className={styles.row} data-testid="inventory-component">
       <div className={styles.block}>
         <h1>This is the Knight's Inventory!</h1>
         <ul>
