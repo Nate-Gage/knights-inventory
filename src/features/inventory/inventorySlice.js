@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchHealth } from "./healthAPI";
 
-const initialState = {
+export const initialState = {
   weapon: {
     type: "Spear",
     rarity: "Uncommon",

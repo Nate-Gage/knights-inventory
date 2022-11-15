@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectHealth, increment, decrement } from "./healthSlice";
+import { increment, decrement } from "./healthSlice";
+import { selectHealth } from "../inventory/selectors/healthSelectors";
 import styles from "./Inventory.module.css";
 
 export const HealthCounter = () => {

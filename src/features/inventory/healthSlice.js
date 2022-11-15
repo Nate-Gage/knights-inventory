@@ -23,6 +23,4 @@ export const healthSlice = createSlice({
 
 export const { increment, decrement } = healthSlice.actions;
 
-export const selectHealth = (state) => state.health.health;
-
 export default healthSlice.reducer;
