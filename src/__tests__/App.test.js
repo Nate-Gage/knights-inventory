@@ -5,7 +5,6 @@ import {
 } from "@testing-library/react";
 import { Provider } from "react-redux";
 import App from "../App";
-import Inventory from "../features/inventory/Inventory";
 import { store } from "../app/store";
 
 afterEach(() => {
@@ -24,12 +23,24 @@ describe("Test suite for App component", () => {
   test("App component renders", () => {
     render(<App />);
     const el = screen.getByTestId("app-component");
+    expect(el).toBeInTheDocument();
+  });
 
+  test("Logo renders", () => {
+    render(<App />);
+    const el = screen.getByTestId("logo");
     expect(el).toBeInTheDocument();
   });
 
   test("Make sure App Component contains the Inventory component", () => {
-    const { getByText } = render(<App />);
-    expect(getByText(/This is the Knight's Inventory!/i)).toBeInTheDocument();
+    render(<App />);
+    const el = screen.getByText(/This is the Knight's Inventory!/i);
+    expect(el).toBeInTheDocument();
+  });
+
+  test("Make sure App Component contains the HealthCounter component", () => {
+    render(<App />);
+    const el = screen.getByText(/Health is currently at/i);
+    expect(el).toBeInTheDocument();
   });
 });

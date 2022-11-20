@@ -9,13 +9,13 @@ export const HealthCounter = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className={styles.row}>
+    <div className={styles.row} data-testid="healthcounter-component">
       <h2>Health is currently at:</h2>
-      <p>{health}</p>
-      <button className={styles.button} onClick={() => dispatch(decrement())}>
+      <p data-testid="health">{health}</p>
+      <button data-testid="increment-button" className={styles.button} onClick={() => dispatch(decrement())}>
         -
       </button>
-      <button className={styles.button} onClick={() => dispatch(increment())}>
+      <button data-testid="decrement-button" className={styles.button} onClick={() => dispatch(increment())}>
         +
       </button>
       {health < 1 && <p>Oh no, you have died!</p>}

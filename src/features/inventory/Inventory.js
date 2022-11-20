@@ -1,4 +1,5 @@
 import React from "react";
+import inventorySlice from "../inventory/inventorySlice";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectArmor,
@@ -19,9 +20,9 @@ export const Inventory = () => {
       <div className={styles.block}>
         <h1>This is the Knight's Inventory!</h1>
         <ul>
-          <li>{weapon.type}</li>
-          <li>{shield}</li>
-          <li>{armor}</li>
+          <li data-testid="weapon">{weapon.type}</li>
+          <li data-testid="shield ">{shield}</li>
+          <li data-testid="armor">{armor}</li>
         </ul>
       </div>
       <div className={styles.block}>
